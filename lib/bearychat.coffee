@@ -25,7 +25,7 @@ class BearyChat extends Adapter
       res.end 200
 
     @robot.logger.info "#{@robot.name} is online."
-    # @send {}, "#{@robot.name} is online."
+    @send {}, "#{@robot.name} is online."
 
     @emit 'connected'
 
