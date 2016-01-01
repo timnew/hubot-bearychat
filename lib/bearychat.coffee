@@ -4,7 +4,7 @@
 class BearyChat extends Adapter
   run: ->
     @bearyChatOutgoing = process.env.BEARY_CHAT_OUTGOING
-    @bearyChatIncomming = process.env.BEARY_CHAT_INCOMMING
+    @bearyChatIncoming = process.env.BEARY_CHAT_INCOMING
 
     @robot.router.post @bearyChatOutgoing, (req, res) =>
       @robot.logger.info req.body
@@ -35,7 +35,7 @@ class BearyChat extends Adapter
     message = JSON.stringify
       text: strings.join('\n')
 
-    @robot.http(@breaChatIncomming)
+    @robot.http(@bearyChatIncoming)
           .header('Content-Type', 'application/json')
           .post(message) (err, res, body) =>
             @robot.logger.info body
