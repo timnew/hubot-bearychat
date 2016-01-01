@@ -2,7 +2,7 @@
 {Robot, Adapter, TextMessage, Response, User} = require 'hubot'
 
 class BearyChat extends Adapter
-  run: ->
+  run: =>
     @bearyChatOutgoing = process.env.BEARY_CHAT_OUTGOING
     @bearyChatIncomming = process.env.BEARY_CHAT_INCOMMING
 
@@ -27,7 +27,7 @@ class BearyChat extends Adapter
 
     @emit 'connected'
 
-  send: (user, strings...) ->
+  send: (user, strings...) =>
     @robot.logger.i 'Send message', strings...
 
     message = JSON.stringify
@@ -38,7 +38,7 @@ class BearyChat extends Adapter
           .post(message) (err, res, body) =>
             @robot.logger.i body
 
-  reply: (user, strings...) ->
+  reply: (user, strings...) =>
     @send user, strings...
 
 exports.use = (robot) ->
