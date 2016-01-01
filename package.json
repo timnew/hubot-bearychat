@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/timnew/hutbot-bearychat.git"
+    "url": "https://github.com/timnew/hubot-bearychat.git"
   },
   "keywords": [
     "hubot",
@@ -19,7 +19,10 @@
   "author": "TimNew",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/timnew/hutbot-bearychat/issues"
+    "url": "https://github.com/timnew/hubot-bearychat/issues"
   },
-  "homepage": "https://github.com/timnew/hutbot-bearychat#readme"
+  "homepage": "https://github.com/timnew/hubot-bearychat#readme",
+  "dependencies": {
+    "hubot": "^2.17.0"
+  }
 }
