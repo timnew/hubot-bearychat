@@ -7,7 +7,7 @@ class BearyChat extends Adapter
     @bearyChatIncomming = process.env.BEARY_CHAT_INCOMMING
 
     @robot.router.post @bearyChatOutgoing, (req, res) =>
-      @robot.logger.i req.body
+      @robot.logger.info req.body
       ###
       {
         token: "robot's token"
@@ -24,13 +24,13 @@ class BearyChat extends Adapter
       @receive new TextMessage(user, incomingMessage.text)
       res.end 200
 
-    @robot.logger.i "#{@robot.name} is online."
+    @robot.logger.info "#{@robot.name} is online."
     # @send {}, "#{@robot.name} is online."
 
     @emit 'connected'
 
   send: (user, strings...) ->
-    @robot.logger.i 'Send message', strings...
+    @robot.logger.info 'Send message', strings...
 
     message = JSON.stringify
       text: strings.join('\n')
@@ -38,7 +38,7 @@ class BearyChat extends Adapter
     @robot.http(@breaChatIncomming)
           .header('Content-Type', 'application/json')
           .post(message) (err, res, body) =>
-            @robot.logger.i body
+            @robot.logger.info body
 
   reply: (user, strings...) ->
     @send user, strings...
