@@ -1,0 +1,25 @@
+{
+  "name": "hubot-bearychat",
+  "version": "0.1.0",
+  "description": "Hubot Bearychat Adapter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/timnew/hutbot-bearychat.git"
+  },
+  "keywords": [
+    "hubot",
+    "bearychat",
+    "adapter",
+    "channel"
+  ],
+  "author": "TimNew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timnew/hutbot-bearychat/issues"
+  },
+  "homepage": "https://github.com/timnew/hutbot-bearychat#readme"
+}
