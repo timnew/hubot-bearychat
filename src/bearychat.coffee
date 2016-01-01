@@ -6,7 +6,7 @@ class BearyChat extends Adapter
     @bearyChatOutgoing = process.env.BEARY_CHAT_OUTGOING
     @bearyChatIncomming = process.env.BEARY_CHAT_INCOMMING
 
-    robot.router.post @bearyChatOutgoing, (req, res) =>
+    @robot.router.post @bearyChatOutgoing, (req, res) =>
       ###
       {
         token: "robot's token"
