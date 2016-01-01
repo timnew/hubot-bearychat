@@ -22,7 +22,7 @@ class BearyChat extends Adapter
       incomingMessage = req.body
       user = new User(req.body.user_name)
       @receive new TextMessage(user, incomingMessage.text)
-      res.end 200
+      res.status(200).end()
 
     @robot.logger.info "#{@robot.name} is online."
     @send {}, "#{@robot.name} is online."
