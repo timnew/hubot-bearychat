@@ -2,11 +2,12 @@
 {Robot, Adapter, TextMessage, Response, User} = require 'hubot'
 
 class BearyChat extends Adapter
-  run: =>
+  run: ->
     @bearyChatOutgoing = process.env.BEARY_CHAT_OUTGOING
     @bearyChatIncomming = process.env.BEARY_CHAT_INCOMMING
 
     @robot.router.post @bearyChatOutgoing, (req, res) =>
+      @robot.logger.i req.body
       ###
       {
         token: "robot's token"
@@ -23,11 +24,12 @@ class BearyChat extends Adapter
       @receive new TextMessage(user, incomingMessage.text)
       res.end 200
 
-    @send {}, "#{@robot.name} is online."
+    @robot.logger.i "#{@robot.name} is online."
+    # @send {}, "#{@robot.name} is online."
 
     @emit 'connected'
 
-  send: (user, strings...) =>
+  send: (user, strings...) ->
     @robot.logger.i 'Send message', strings...
 
     message = JSON.stringify
@@ -38,7 +40,7 @@ class BearyChat extends Adapter
           .post(message) (err, res, body) =>
             @robot.logger.i body
 
-  reply: (user, strings...) =>
+  reply: (user, strings...) ->
     @send user, strings...
 
 exports.use = (robot) ->
