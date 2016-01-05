@@ -13,7 +13,7 @@ class BearyChat extends Adapter
     @emit 'connected'
 
   configChatOutgoing: ->
-    parsedUrl = url.path(process.env.BEARY_CHAT_OUTGOING || '/bearychat/outgoing')
+    parsedUrl = url.parse(process.env.BEARY_CHAT_OUTGOING || '/bearychat/outgoing')
 
     if parsedUrl.protocol? and parsedUrl.protocol != 'https:'
       ex = new Error('Chat Outgoing must be https')
