@@ -1,3 +1,6 @@
+DEPRECATED: The hubot-bearychat package ownship has been transfered back to BearyChat company per their request, and I also removed myself from the package maintiners list as their requirement. The new package will be developed and maintained by BearyChat company. Code here is deprecated and not related to new adapter. The repo will not updated any longer. Please use offical adapter in the future.
+=========================================================================================
+
 hubot-bearychat [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 ================
 
